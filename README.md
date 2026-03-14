@@ -1,18 +1,28 @@
 # Code-Snippet-Sharing-Platform
 
- npm install express sequelize mysql2 bcryptjs jsonwebtoken dotenv cors 
- npm install --save-dev nodemon
- npx nodemon index.js  
+<h3>Dependencies</h3>
 
- in mysql - CREATE DATABASE snippet_db;
+<pre><code>npm install express sequelize mysql2 bcryptjs jsonwebtoken dotenv cors
+npm install --save-dev nodemon
+npx nodemon index.js
+</code></pre>
 
- .env- 
-DB_NAME=snippet_db
+<p>In MySQL run the following command:</p>
+
+<pre><code>CREATE DATABASE snippet_db;
+</code></pre>
+
+<h3>Environment Variables</h3>
+
+<p>Create a <b>.env</b> file in the root directory and add the following:</p>
+
+<pre><code>DB_NAME=snippet_db
 DB_USER=root
 DB_PASSWORD=passwordofyourdb
 DB_HOST=localhost
 JWT_SECRET=mysupersecretkey123
 PORT=5000
+</code></pre>
 
 
 <h1>API Endpoints</h1>
