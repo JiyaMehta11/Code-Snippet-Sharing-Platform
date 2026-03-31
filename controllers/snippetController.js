@@ -43,7 +43,6 @@ exports.updateSnippet = async (req, res) => {
     const snippet = await Snippet.findByPk(req.params.id);
     if (!snippet) return res.status(404).json({ message: "Snippet not found" });
 
-    // Ownership Check
     if (snippet.UserId !== req.user.id) {
       return res.status(403).json({ message: "You can only update your own snippets" });
     }
