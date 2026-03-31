@@ -27,24 +27,3 @@ exports.getStats = async (req, res) => {
   });
   res.json(stats);
 };
-
-
-exports.getUserStats = async (req, res) => {
-    try {
-        const stats = await User.findAll({
-            attributes: [
-                'id', 
-                'username', 
-                [sequelize.fn('COUNT', sequelize.col('Snippets.id')), 'totalSnippets']
-            ],
-            include: [{
-                model: Snippet,
-                attributes: []
-            }],
-            group: ['User.id']
-        });
-        res.json(stats);
-    } catch (err) {
-        res.status(500).json({ error: err.message });
-    }
-};
