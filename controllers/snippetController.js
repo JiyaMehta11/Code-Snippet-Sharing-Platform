@@ -23,19 +23,7 @@ exports.getSingle = async (req, res) => {
   res.json(snippet);
 };
 
-exports.getMyPrivateSnippets = async (req, res) => {
-    try {
-        const privateSnippets = await Snippet.findAll({
-            where: { 
-                UserId: req.user.id, 
-                isPrivate: true 
-            }
-        });
-        res.json(privateSnippets);
-    } catch (err) {
-        res.status(500).json({ error: err.message });
-    }
-};
+
 
 
 exports.updateSnippet = async (req, res) => {
